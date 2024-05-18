@@ -104,7 +104,7 @@ class SharedTheme {
     colorScheme: _lightColorScheme,
     fontFamily: 'Colossalis',
     textTheme: _textThemeStyle,
-  );π
+  );
 
   static final darkTheme = ThemeData(
     colorScheme: _darkColorScheme,

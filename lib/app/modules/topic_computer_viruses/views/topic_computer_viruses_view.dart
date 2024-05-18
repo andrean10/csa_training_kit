@@ -119,7 +119,6 @@ There are several ways to protect your computer from viruses, including:
           ],
         ),
       ),
-    
     );
   }
 }

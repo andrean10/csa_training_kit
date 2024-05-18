@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: SharedTheme.lightTheme,
       darkTheme: SharedTheme.darkTheme,
       initialRoute: AppPages.INITIAL,
-    getPages: AppPages.routes,
+      getPages: AppPages.routes,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
