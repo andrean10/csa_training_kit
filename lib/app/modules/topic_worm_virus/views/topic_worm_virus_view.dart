@@ -11,7 +11,7 @@ class TopicWormVirusView extends GetView<TopicWormVirusController> {
 
   @override
   Widget build(BuildContext context) {
-      final widgetCourse = WidgetCourse(theme: context.theme);
+    final widgetCourse = WidgetCourse(theme: context.theme);
 
     return Scaffold(
       appBar: customAppBar(
@@ -124,7 +124,7 @@ An I Seek You (ICQ) or IRC message can contain a link to a worm, which, when cli
 Network packets can penetrate into the computer’s memory. At that point, the worm gets activated, infecting the host computer.
 """,
               textAlign: TextAlign.justify,
-            ),            
+            ),
             const Gap(4),
             widgetCourse.subtitle('Files Sent as Email Attachments'),
             const Gap(4),
@@ -160,9 +160,10 @@ An I Seek You (ICQ) or IRC message can contain a link to a worm, which, when cli
 Network packets can penetrate into the computer’s memory. At that point, the worm gets activated, infecting the host computer.
 """,
               textAlign: TextAlign.justify,
-            ),           
+            ),
             const Gap(4),
-            widgetCourse.subtitle('Via Peer-to-Peer (P2P) File-sharing Networks'),
+            widgetCourse
+                .subtitle('Via Peer-to-Peer (P2P) File-sharing Networks'),
             const Gap(4),
             widgetCourse.body(
               """
@@ -202,7 +203,8 @@ Because worms replicate, again and again, they often take up large amounts of ha
             const Gap(6),
             widgetCourse.title('Stay Protected Against Computer Worms'),
             const Gap(4),
-            widgetCourse.subtitle('Invest in a Strong Internet Security Software Solution'),
+            widgetCourse.subtitle(
+                'Invest in a Strong Internet Security Software Solution'),
             const Gap(4),
             widgetCourse.body(
               """
@@ -229,7 +231,8 @@ If your operating system is up-to-date with the most recent version, you are mor
               textAlign: TextAlign.justify,
             ),
             const Gap(4),
-            widgetCourse.subtitle('What is the Difference Between a Worm, Virus, and a Trojan Horse?'),
+            widgetCourse.subtitle(
+                'What is the Difference Between a Worm, Virus, and a Trojan Horse?'),
             const Gap(4),
             widgetCourse.body(
               """
@@ -238,14 +241,14 @@ A virus attaches to a file or program, and it gets sent to another computer beca
 A worm also spreads from one computer to the next, but it does this all on its own, without the help of an additional file or program. A Trojan horse is very different from both a worm and a virus, particularly in how it is spread. A Trojan will look like a legitimate program, but when it is executed, it infects your computer, causing different kinds of harm. Trojans also have the ability to set up backdoors—similar to worms—that allow a hacker to gain access to your system.
 """,
               textAlign: TextAlign.justify,
-            ),       
+            ),
             const Gap(6),
             widgetCourse.title('Frequently Asked Questions about Worm Virus'),
             const Gap(4),
             widgetCourse.subtitle('What is a worm virus?'),
             const Gap(4),
             widgetCourse.body(
-"""
+              """
 A worm virus refers to a malicious program that replicates itself, automatically spreading through a network.
 """,
               textAlign: TextAlign.justify,
@@ -254,7 +257,7 @@ A worm virus refers to a malicious program that replicates itself, automatically
             widgetCourse.subtitle('How do computer worms work?'),
             const Gap(4),
             widgetCourse.body(
-"""
+              """
 Worms are transmitted through vulnerabilities in software. They could also be sent through email attachments or within instant messages or spam emails. After a file is opened, it may link the user to a malicious website or it could download the worm to the user’s device automatically. Once the worm is on the device, it infects it without the user being able to tell.
 """,
               textAlign: TextAlign.justify,
@@ -263,11 +266,11 @@ Worms are transmitted through vulnerabilities in software. They could also be se
             widgetCourse.subtitle('How do worm viruses spread?'),
             const Gap(4),
             widgetCourse.body(
-"""
+              """
 Worms spread on their own, without the help of additional software or files. A worm is often introduced to a computer or network through a link or file sent through an email, chat, or other online communication.
 """,
               textAlign: TextAlign.justify,
-            ),    
+            ),
           ],
         ),
       ),
