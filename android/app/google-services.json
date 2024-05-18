@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "294508743526",
+    "project_id": "csa-training",
+    "storage_bucket": "csa-training.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294508743526:android:0dfc2265811f60496256a7",
+        "android_client_info": {
+          "package_name": "com.example.csa_training_kit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbmqic2W5JYAIeVti7EbxVI9_Xr_yMgCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
