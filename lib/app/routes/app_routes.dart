@@ -11,9 +11,7 @@ abstract class Routes {
   static const TOPIC_COMPUTER_VIRUSES = _Paths.TOPIC_COMPUTER_VIRUSES;
   static const TOPIC_DDOS_ATTACK = _Paths.TOPIC_DDOS_ATTACK;
   static const TOPIC_MALWARE = _Paths.TOPIC_MALWARE;
-  static const TOPIC_RANSOMWARE = _Path
-  `
-  ]`1s.TOPIC_RANSOMWARE;
+  static const TOPIC_RANSOMWARE = _Paths.TOPIC_RANSOMWARE;
   static const TOPIC_TROJAN = _Paths.TOPIC_TROJAN;
   static const TOPIC_WORM_VIRUS = _Paths.TOPIC_WORM_VIRUS;
 }

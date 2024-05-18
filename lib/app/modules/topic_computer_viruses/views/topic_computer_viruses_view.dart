@@ -89,7 +89,7 @@ There are several types of computer viruses that can infect devices. This sectio
               textAlign: TextAlign.justify,
             ),
             const Gap(6),
-            widgetCourse.subtitle('Exampes of Computer Viruses'),
+            widgetCourse.subtitle('Examples of Computer Viruses'),
             const Gap(4),
             widgetCourse.body(
               """
@@ -119,6 +119,7 @@ There are several ways to protect your computer from viruses, including:
           ],
         ),
       ),
+    
     );
   }
 }

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class SharedTheme {
   static const Color whiteColor = Color(0xFFFFFFFF);
 
-  static final _primaryTextStyle = GoogleFonts.josefinSans().fontFamily;
+  // static final _primaryTextStyle = GoogleFonts.josefinSans().fontFamily;
   static final _secondaryTextStyle = GoogleFonts.openSans().fontFamily;
 
   static const thin = FontWeight.w100;
@@ -102,13 +102,13 @@ class SharedTheme {
 
   static final lightTheme = ThemeData(
     colorScheme: _lightColorScheme,
-    fontFamily: _primaryTextStyle,
+    fontFamily: 'Colossalis',
     textTheme: _textThemeStyle,
-  );
+  );π
 
   static final darkTheme = ThemeData(
     colorScheme: _darkColorScheme,
-    fontFamily: _primaryTextStyle,
+    fontFamily: 'Colossalis',
     textTheme: _textThemeStyle,
   );
 }

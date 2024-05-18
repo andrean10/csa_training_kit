@@ -47,31 +47,37 @@ class AppPages {
       name: _Paths.TOPIC_COMPUTER_VIRUSES,
       page: () => const TopicComputerVirusesView(),
       binding: TopicComputerVirusesBinding(),
+      transition: Transition.cupertino,
     ),
     GetPage(
       name: _Paths.TOPIC_DDOS_ATTACK,
       page: () => const TopicDdosAttackView(),
       binding: TopicDdosAttackBinding(),
+      transition: Transition.cupertino,
     ),
     GetPage(
       name: _Paths.TOPIC_MALWARE,
       page: () => const TopicMalwareView(),
       binding: TopicMalwareBinding(),
+      transition: Transition.cupertino,
     ),
     GetPage(
       name: _Paths.TOPIC_RANSOMWARE,
       page: () => const TopicRansomwareView(),
       binding: TopicRansomwareBinding(),
+      transition: Transition.cupertino,
     ),
     GetPage(
       name: _Paths.TOPIC_TROJAN,
       page: () => const TopicTrojanView(),
       binding: TopicTrojanBinding(),
+      transition: Transition.cupertino,
     ),
     GetPage(
       name: _Paths.TOPIC_WORM_VIRUS,
       page: () => const TopicWormVirusView(),
       binding: TopicWormVirusBinding(),
+      transition: Transition.cupertino,
     ),
   ];
 }
