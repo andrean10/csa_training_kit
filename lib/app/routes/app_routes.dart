@@ -14,6 +14,7 @@ abstract class Routes {
   static const TOPIC_RANSOMWARE = _Paths.TOPIC_RANSOMWARE;
   static const TOPIC_TROJAN = _Paths.TOPIC_TROJAN;
   static const TOPIC_WORM_VIRUS = _Paths.TOPIC_WORM_VIRUS;
+  static const RESULT_SCORE = _Paths.RESULT_SCORE;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const TOPIC_RANSOMWARE = '/topic-ransomware';
   static const TOPIC_TROJAN = '/topic-trojan';
   static const TOPIC_WORM_VIRUS = '/topic-worm-virus';
+  static const RESULT_SCORE = '/result-score';
 }

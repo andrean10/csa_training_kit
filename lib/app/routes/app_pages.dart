@@ -4,6 +4,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/quiz/bindings/quiz_binding.dart';
+import '../modules/result_score/bindings/result_score_binding.dart';
+import '../modules/result_score/views/result_score_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/topic_computer_viruses/bindings/topic_computer_viruses_binding.dart';
@@ -25,7 +27,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.MAIN;
 
   static final routes = [
     GetPage(
@@ -77,6 +79,18 @@ class AppPages {
       name: _Paths.TOPIC_WORM_VIRUS,
       page: () => const TopicWormVirusView(),
       binding: TopicWormVirusBinding(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: _Paths.TOPIC_WORM_VIRUS,
+      page: () => const TopicWormVirusView(),
+      binding: TopicWormVirusBinding(),
+      transition: Transition.cupertino,
+    ),
+    GetPage(
+      name: _Paths.RESULT_SCORE,
+      page: () => const ResultScoreView(),
+      binding: ResultScoreBinding(),
       transition: Transition.cupertino,
     ),
   ];

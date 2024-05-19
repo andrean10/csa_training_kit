@@ -1,6 +1,9 @@
 import 'package:csa_training_kit/app/data/models/quiz/quiz_model.dart';
 import 'package:csa_training_kit/app/modules/init/controllers/init_controller.dart';
+import 'package:csa_training_kit/app/routes/app_pages.dart';
+import 'package:csa_training_kit/utils/constants_asset_image.dart';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 
 class QuizController extends GetxController {
   late final InitController _initC;
@@ -8,6 +11,12 @@ class QuizController extends GetxController {
   late final List<QuizModel> dataQuiz;
 
   final currentQuestionIndex = 0.obs;
+  final currentOptionIndex = RxnInt();
+  final userAnswer = [];
+
+  final isLoading = false.obs;
+
+  final logger = Logger();
 
   @override
   void onInit() {
@@ -22,6 +31,7 @@ class QuizController extends GetxController {
 
     dataQuiz = [
       QuizModel(
+        image: ConstantsAssetImage.imgQuestion,
         question: 'What will happened if you click popup while using internet?',
         options: [
           'it will take you to a malicious web and and it is possible that a virus will enter your device',
@@ -95,7 +105,7 @@ class QuizController extends GetxController {
         correctAnswerIndex: 0,
       ),
       QuizModel(
-        question: 'what you will do if you know your data is leaked?',
+        question: 'What you will do if you know your data is leaked?',
         options: [
           'Dont do anything',
           'Report to the administration',
@@ -143,7 +153,7 @@ class QuizController extends GetxController {
       ),
       QuizModel(
         question:
-            'device get crash (black screen) after install pirate software what you need to do?',
+            'Device get crash (black screen) after install pirate software what you need to do?',
         options: [
           'shutdown your pc and do nothing',
           'start get panic and screaming',
@@ -154,5 +164,53 @@ class QuizController extends GetxController {
     ];
   }
 
-  void processScore() {}
+  void setCurrentIndexOption(int value) => currentOptionIndex.value = value;
+
+  void nextQuestion(int indexOption) {
+    userAnswer.add(indexOption);
+    currentQuestionIndex.value++;
+    currentOptionIndex.value = null;
+
+    logger.d('debug: index jawaban user = $indexOption');
+    logger.d('debug: list jawaban user = $userAnswer');
+  }
+
+  void previousQuestion() {
+    userAnswer.removeLast();
+    final previousIndex = currentQuestionIndex.value--;
+    currentQuestionIndex.value = previousIndex;
+    currentOptionIndex.value = userAnswer[previousIndex];
+
+    logger.d('debug: list jawaban user = $userAnswer');
+  }
+
+  void calculateScore() {
+    userAnswer.add(currentOptionIndex.value);
+
+    Future.sync(() {
+      isLoading.value = true;
+
+      var score = 0;
+      for (var i = 0; i < dataQuiz.length; i++) {
+        final quiz = dataQuiz[i];
+        final answer = userAnswer[i];
+
+        if (quiz.isCorrect(answer)) {
+          score++;
+        }
+      }
+
+      return score;
+    }).then((score) {
+      Get.offAllNamed(
+        Routes.RESULT_SCORE,
+        arguments: {
+          'score': score,
+          'number_questions': dataQuiz.length,
+        },
+      );
+    }).catchError((e) {
+      logger.e('Error: calculateScore = $e');
+    });
+  }
 }
