@@ -15,6 +15,7 @@ class QuizController extends GetxController {
   final userAnswer = [];
 
   final isLoading = false.obs;
+  var isPrevious = false;
 
   final logger = Logger();
 
@@ -167,21 +168,36 @@ class QuizController extends GetxController {
   void setCurrentIndexOption(int value) => currentOptionIndex.value = value;
 
   void nextQuestion(int indexOption) {
-    userAnswer.add(indexOption);
-    currentQuestionIndex.value++;
-    currentOptionIndex.value = null;
+    // logger.d('debug: currentQuestionIndex before next = $currentQuestionIndex');
+    // logger.d('debug: answer length before = ${userAnswer.length}');
 
-    logger.d('debug: index jawaban user = $indexOption');
-    logger.d('debug: list jawaban user = $userAnswer');
+    currentQuestionIndex.value++;
+
+    if (currentQuestionIndex < userAnswer.length) {
+      currentOptionIndex.value = userAnswer[currentQuestionIndex.value];
+    } else {
+      if (isPrevious) {
+        isPrevious = false;
+      } else {
+        userAnswer.add(indexOption);
+      }
+
+      currentOptionIndex.value = null;
+    }
+
+    // logger.d('debug: currentQuestionIndex after next = $currentQuestionIndex');
+    // logger.d('debug: answer length after = ${userAnswer.length}');
+
+    // logger.d('debug: index jawaban user = $indexOption');
+    // logger.d('debug: list jawaban user = $userAnswer');
   }
 
   void previousQuestion() {
-    userAnswer.removeLast();
-    final previousIndex = currentQuestionIndex.value--;
+    isPrevious = true;
+    final previousIndex = currentQuestionIndex.value - 1;
+
     currentQuestionIndex.value = previousIndex;
     currentOptionIndex.value = userAnswer[previousIndex];
-
-    logger.d('debug: list jawaban user = $userAnswer');
   }
 
   void calculateScore() {
